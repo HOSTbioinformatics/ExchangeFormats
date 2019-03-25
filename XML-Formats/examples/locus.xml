@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locus experiment="experiment" chromosome="chr4" firstbase="12345" lastbase="12998"
+       xmlns="http://bioinformatics.hochschule-stralsund.de/locus"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://bioinformatics.hochschule-stralsund.de/locus locus.xsd">
+
+    <nucleosome>
+        <pos>12384</pos>
+        <mpos>12534</mpos>
+    </nucleosome>
+    <nucleosome>
+        <pos>12574</pos>
+        <mpos>12729</mpos>
+    </nucleosome>
+    <nucleosome>
+        <pos>12767</pos>
+        <mpos>12910</mpos>
+    </nucleosome>
+
+</locus>

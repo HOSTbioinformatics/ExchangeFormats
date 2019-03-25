@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bioinformatics.hochschule-stralsund.de/presetting"
+        xmlns:tns="http://bioinformatics.hochschule-stralsund.de/presetting" elementFormDefault="qualified">
+    <complexType name="geometry">
+        <sequence>
+            <element name="alpha" type="tns:type_angle" minOccurs="1" maxOccurs="1"/>
+            <element name="beta" type="tns:type_angle" minOccurs="1" maxOccurs="1"/>
+            <element name="gamma" type="tns:type_angle" minOccurs="1" maxOccurs="1"/>
+            <element name="delta" type="tns:type_angle" minOccurs="1" maxOccurs="1"/>
+            <element name="epsilon" type="tns:type_angle" minOccurs="1" maxOccurs="1"/>
+            <element name="phi" type="tns:type_angle" minOccurs="1" maxOccurs="1"/>
+            <element name="zeta" type="tns:type_angle" minOccurs="1" maxOccurs="1"/>
+            <element name="nucCenterDistance" type="tns:type_non_negative_double" minOccurs="1" maxOccurs="1"/>
+            <element name="segLength" type="tns:type_gt_zero_double" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+    </complexType>
+    <simpleType name="potential">
+        <restriction base="string">
+            <enumeration value="GB"/>
+            <enumeration value="GB2"/>
+            <enumeration value="LJ"/>
+            <enumeration value="ZE"/>
+            <enumeration value="ZE2"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="type_angle">
+        <restriction base="double">
+            <minInclusive value="-360.0"/>
+            <maxInclusive value="360.0"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="type_non_negative_double">
+        <restriction base="double">
+            <minInclusive value="0"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="type_gt_zero_double">
+        <restriction base="double">
+            <minExclusive value="0"/>
+        </restriction>
+    </simpleType>
+    <complexType name="parameter">
+        <sequence>
+            <element name="name" type="string" maxOccurs="1" minOccurs="1"/>
+            <element name="value" type="string" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="type_parameter_list">
+        <sequence>
+            <element name="parameter" type="tns:parameter" maxOccurs="unbounded" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType name="presetting">
+        <sequence>
+            <element name="geometry" type="tns:geometry" maxOccurs="1" minOccurs="1"/>
+            <element name="parameterlist" type="tns:type_parameter_list" maxOccurs="1" minOccurs="1"/>
+            <element name="potential" type="tns:potential" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <element name="presetting" type="tns:presetting"/>
+</schema>

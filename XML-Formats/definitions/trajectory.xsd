@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://bioinformatics.hochschule-stralsund.de/trajectory" 
+elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:trj="http://bioinformatics.hochschule-stralsund.de/trajectory">
+    <simpleType name="type_angle">
+        <restriction base="double">
+            <minInclusive value="-360.0"/>
+            <maxInclusive value="360.0"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="type_gt_zero_double">
+        <restriction base="double">
+            <minExclusive value="0"/>
+        </restriction>
+    </simpleType>
+    <complexType name="Vector3D">
+        <sequence>
+            <element name="x" type="double" maxOccurs="1" minOccurs="1"/>
+            <element name="y" type="double" maxOccurs="1" minOccurs="1"/>
+            <element name="z" type="double" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="Bead" abstract="true">
+        <sequence>
+            <element name="id" type="unsignedInt" maxOccurs="1" minOccurs="1"/>
+            <element name="equilibrium_segment_length" maxOccurs="1" minOccurs="1" type="trj:type_gt_zero_double"/>
+            <element name="intrinsic_twist" type="trj:type_angle" maxOccurs="1" minOccurs="1"/>
+            <element name="position" type="trj:Vector3D" maxOccurs="1" minOccurs="1"/>
+            <element name="f_vector" type="trj:Vector3D" maxOccurs="1" minOccurs="1"/>
+            <element name="bend_vector" type="trj:Vector3D" maxOccurs="1" minOccurs="1"/>
+            <element name="segment_vector" type="trj:Vector3D" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="DNABead">
+        <complexContent>
+            <extension base="trj:Bead">
+                <sequence>
+                    <element name="charged" type="boolean" maxOccurs="1" minOccurs="1"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="NucleosomeBead">
+        <complexContent>
+            <extension base="trj:Bead">
+                <sequence>
+                    <element name="center_orientation_vector" type="trj:Vector3D" maxOccurs="1" minOccurs="1"/>
+                    <element name="center" type="trj:Vector3D" maxOccurs="1" minOccurs="1"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="BeadList">
+        <choice maxOccurs="unbounded" minOccurs="0">
+            <element name="dnabead" type="trj:DNABead"/>
+            <element name="nucleosomebead" type="trj:NucleosomeBead"/>
+        </choice>
+    </complexType>
+    <complexType name="Parameter">
+        <sequence>
+            <element name="name" type="string" maxOccurs="1" minOccurs="1"/>
+            <element name="value" type="string" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="ParameterList">
+        <sequence>
+            <element name="parameter" type="trj:Parameter" maxOccurs="unbounded" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType name="Configuration">
+        <sequence>
+            <element name="mc_steps" type="unsignedInt" maxOccurs="1" minOccurs="1"/>
+            <element name="overwrite_parameters" type="trj:ParameterList" maxOccurs="1" minOccurs="0"/>
+            <element name="beads" type="trj:BeadList" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="ConfigurationList">
+        <sequence>
+            <element name="configuration" type="trj:Configuration" maxOccurs="unbounded" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="Trajectory">
+        <sequence>
+            <element name="date" type="string" maxOccurs="1" minOccurs="1"/>
+            <element name="schema_version" type="string" maxOccurs="1" minOccurs="1"/>
+            <element name="program" type="string" maxOccurs="1" minOccurs="1"/>
+            <element name="program_version" type="string" maxOccurs="1" minOccurs="1"/>
+            <element name="parameters" type="trj:ParameterList" maxOccurs="1" minOccurs="1"/>
+            <element name="configurations" type="trj:ConfigurationList" maxOccurs="1" minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <element name="trajectory" type="trj:Trajectory"/>
+</schema>

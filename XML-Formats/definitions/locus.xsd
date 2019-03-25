@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:locus="http://bioinformatics.hochschule-stralsund.de/locus"
+        targetNamespace="http://bioinformatics.hochschule-stralsund.de/locus"
+        elementFormDefault="qualified" >
+    <complexType name="nucleosome">
+        <sequence>
+            <element name="pos" type="unsignedLong" maxOccurs="1"
+                     minOccurs="1"/>
+            <element name="mpos" type="unsignedLong" maxOccurs="1"
+                     minOccurs="1"/>
+        </sequence>
+    </complexType>
+    <complexType name="locus">
+        <sequence>
+            <element name="nucleosome" type="locus:nucleosome"
+                     maxOccurs="unbounded" minOccurs="1"/>
+        </sequence>
+        <attribute name="chromosome" type="string"/>
+        <attribute name="firstbase" type="unsignedLong"/>
+        <attribute name="lastbase" type="unsignedLong"/>
+        <attribute name="experiment" type="string"/>
+    </complexType>
+    <element name="locus" type="locus:locus"/>
+</schema>

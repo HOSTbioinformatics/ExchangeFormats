@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="type_bead"/>
+	
+	<xs:complexType name="type_bead_real">
+		<xs:complexContent>
+			<xs:extension base="type_bead">
+				<xs:attribute name="position">
+					<xs:simpleType>
+						<xs:restriction base="xs:long">
+							<xs:minInclusive value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="ref_prototype" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="type_bead_prototype">
+		<xs:complexContent>
+			<xs:extension base="type_bead">
+				<xs:attribute name="id" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="type_angle">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="-360.0"/>
+			<xs:maxInclusive value="360.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="type_gt_zero_double">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="type_non_negative_double">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="type_dna_prototype">
+		<xs:complexContent>
+			<xs:extension base="type_bead_prototype">
+				<xs:all>
+					<xs:element name="segmentLength" type="type_gt_zero_double" minOccurs="1" maxOccurs="1"/>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="type_nucleosome_prototype">
+		<xs:complexContent>
+			<xs:extension base="type_bead_prototype">
+				<xs:all>
+					<xs:element name="segmentLength" minOccurs="1" maxOccurs="1">
+						<xs:simpleType>
+							<xs:restriction base="xs:double">
+								<xs:minExclusive value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="alpha" type="type_angle" maxOccurs="1" minOccurs="1"/>
+					<xs:element name="beta"  type="type_angle" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="gamma" type="type_angle" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="delta" type="type_angle" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="epsilon" type="type_angle" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="phi" type="type_angle" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="zeta" type="type_angle" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="nucCenterDistance" type="type_non_negative_double" minOccurs="1" maxOccurs="1"/>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="type_dna_real">
+		<xs:complexContent>
+			<xs:extension base="type_bead_real">
+				<xs:all>
+					<xs:element name="segmentLength" type="type_gt_zero_double" minOccurs="0" maxOccurs="1"/>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="type_nucleosome_real">
+		<xs:complexContent>
+			<xs:extension base="type_bead_real">
+				<xs:all>
+					<xs:element name="segmentLength" type="type_gt_zero_double" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="alpha" type="type_angle" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="beta"  type="type_angle" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="gamma" type="type_angle" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="delta" type="type_angle" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="epsilon" type="type_angle" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="phi" type="type_angle" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="zeta" type="type_angle" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="nucCenterDistance" type="type_gt_zero_double" minOccurs="0" maxOccurs="1"/>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="configuration">
+		<xs:complexType>
+			<xs:sequence>
+				
+				<xs:element name="parameters">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" type="xs:string"/>
+									<xs:attribute name="value" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>oh
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="unique_parameter">
+						<xs:selector xpath="parameter"/>
+						<xs:field xpath="@name"/>
+					</xs:unique> 
+				</xs:element>
+			
+				<xs:element name="beadPrototype">
+					<xs:complexType>
+						<xs:choice minOccurs="0" maxOccurs="unbounded">
+							<xs:element type="type_dna_prototype" name="dna" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element type="type_dna_prototype" name="udna" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element type="type_nucleosome_prototype"  name="nuc" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="chain">
+					<xs:complexType>
+						<xs:choice minOccurs="0" maxOccurs="unbounded">
+							<xs:element type="type_dna_real" name="dna" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element type="type_dna_real" name="udna" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element type="type_nucleosome_real"  name="nuc" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:choice>
+					</xs:complexType>
+					<xs:unique name="unique_position">
+						<xs:selector xpath="dna|udna|nuc"/>
+						<xs:field xpath="@position"/>
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>	
+
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="chromatin|dna"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="buildMode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="straight"/>
+						<xs:enumeration value="twisted"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="closed" type="xs:boolean" use="required"/>
+			<xs:attribute name="nucPotential">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="NUC_POT_GB"/>
+						<xs:enumeration value="NUC_POT_GB2"/>
+						<xs:enumeration value="NUC_POT_LJ"/>
+						<xs:enumeration value="NUC_POT_ZE"/>
+						<xs:enumeration value="NUC_POT_ZE2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+		
+		<xs:key name="key_prototype_id">
+			<xs:selector xpath="beadPrototype/dna|beadPrototype/udna|beadPrototype/nuc"/>
+			<xs:field xpath="@id"/>
+		</xs:key> 
+		
+		<xs:keyref name="keyref_prototype_id" refer="key_prototype_id">
+			<xs:selector xpath="chain/dna|chain/udna|chain/nuc"/>
+			<xs:field xpath="@ref_prototype"/>
+		</xs:keyref>
+		 
+	</xs:element>
+</xs:schema>

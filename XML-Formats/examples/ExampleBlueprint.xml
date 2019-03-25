@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<configuration buildMode="straight" closed="false" nucPotential="NUC_POT_LJ" type="chromatin">
+
+  <parameters>
+    <parameter name="NumberOfBeads" value="8"/>
+    <parameter name="Temperature" value="293"/>
+    <parameter name="EStatTemperature" value="293"/>
+    <parameter name="EnergyBend" value="1"/>
+    <parameter name="EnergyEstat" value="1"/>
+    <parameter name="EnergyLJ" value="1"/>
+    <parameter name="EnergyStretch" value="1"/>
+    <parameter name="EnergyTorsion" value="1"/>
+    <parameter name="EnergyPulling" value="0"/>
+    <parameter name="EnergySurface" value="0"/>
+    <parameter name="EnergyDNANucColl" value="1"/>
+    <parameter name="RadiusDNA" value="1.2"/>
+    <parameter name="NucleosomeRadius" value="5.5"/>
+    <parameter name="ChainIsClosed" value="0"/>
+    <parameter name="AlphaSDNA" value="665"/>
+    <parameter name="AlphaSNuc" value="665"/>
+    <parameter name="AlphaBDNA" value="120.44"/>
+    <parameter name="AlphaBNuc" value="120.44"/>
+    <parameter name="AlphaTDNA" value="156.57"/>
+    <parameter name="AlphaTNuc" value="782.85"/>
+    <parameter name="LJNucType" value="2"/>
+    <parameter name="SigmaLJNuc" value="10.3"/>
+    <parameter name="EpsLJNuc" value="0.65"/>
+    <parameter name="ChiNucLJ" value="0"/>
+    <parameter name="ChiBarNucLJ" value="0"/>
+    <parameter name="IonicStrength" value="0.1"/>
+    <parameter name="ChargeReductionFactor" value="0.5"/>
+    <parameter name="ComputeEstatAtNucleosome" value="0"/>
+    <parameter name="PhiMaxMCBeadR" value="0.025"/>
+    <parameter name="EveryNthMCBeadR" value="4"/>
+    <parameter name="ShiftMaxMCBeadShift" value="0.1"/>
+    <parameter name="PhiMaxFVecMCShift" value="0.02"/>
+    <parameter name="ThetaMaxMCBranched" value="0.02"/>
+    <parameter name="PhiMaxFVecMC" value="0.02"/>
+    <parameter name="PhiMaxMCPivot" value="0.35"/>
+    <parameter name="EstatType" value="2"/>
+    <parameter name="CutoffEstat" value="18.6"/>
+    <parameter name="CutoffMinDistEstat" value="0.1303"/>
+    <parameter name="DNANucIntersectionNucType" value="1"/>
+    <parameter name="CutoffLJNuc" value="3.5"/>
+    <parameter name="CutoffNucDNAColl" value="15.375"/>
+  </parameters>
+
+  <beadPrototype>
+    <dna id="dna1">
+      <segmentLength>6.8</segmentLength>
+    </dna>
+    <nuc id="nuc1">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>-32</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>3.3</nucCenterDistance>
+    </nuc>
+    <dna id="dna2">
+      <segmentLength>6.46</segmentLength>
+    </dna>
+    <nuc id="nuc2">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>76</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>3.3</nucCenterDistance>
+    </nuc>
+    <dna id="dna3">
+      <segmentLength>5.1</segmentLength>
+    </dna>
+  </beadPrototype>
+
+  <chain>
+    <dna position="0" ref_prototype="dna1"/>
+    <dna position="1" ref_prototype="dna1"/>
+    <nuc position="2" ref_prototype="nuc1"/>
+    <dna position="3" ref_prototype="dna2"/>
+    <dna position="4" ref_prototype="dna2"/>
+    <nuc position="5" ref_prototype="nuc2"/>
+    <dna position="6" ref_prototype="dna3"/>
+    <dna position="7" ref_prototype="dna3"/>
+  </chain>
+
+</configuration>
+
