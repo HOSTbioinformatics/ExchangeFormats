@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:trj="http://bioinformatics.fh-stralsund.de/trajectory"
+                xmlns:trj="http://bioinformatics.hochschule-stralsund.de/trajectory"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 xmlns:math="http://www.w3.org/2005/xpath-functions/math">
 
