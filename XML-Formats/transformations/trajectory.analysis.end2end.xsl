@@ -3,7 +3,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:math="http://exslt.org/math"
-	xmlns:trj="http://bioinformatics.fh-stralsund.de/trajectory">
+	xmlns:trj="http://bioinformatics.hochschule-stralsund.de/trajectory">
 
 
 	<!-- Computing end-to-end distances of all configurations. -->
