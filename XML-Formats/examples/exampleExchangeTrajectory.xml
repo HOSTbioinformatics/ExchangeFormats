@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<trajectory xmlns="http://bioinformatics.fh-stralsund.de/trajectory" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bioinformatics.fh-stralsund.de/trajectory trajectory.xsd">
+<trajectory xmlns="http://bioinformatics.hochschule-stralsund.de/trajectory" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bioinformatics.fh-stralsund.de/trajectory trajectory.xsd">
 
   <date>Mon Feb 18 00:09:19 2019</date>
 
