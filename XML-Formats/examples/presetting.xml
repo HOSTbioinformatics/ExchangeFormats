@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<presetting xmlns="http://bioinformatics.hochschule-stralsund.de/presetting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://bioinformatics.hochschule-stralsund.de/presetting ../presetting.xsd ">
+<presetting xmlns="http://bioinformatics.fh-stralsund.de/presetting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://bioinformatics.fh-stralsund.de/presetting ../presetting.xsd ">
   <geometry>
     <alpha>50.0</alpha>
     <beta>-140.0</beta>
@@ -9,25 +9,25 @@
     <epsilon>-70.0</epsilon>
     <phi>30.0</phi>
     <zeta>10.0</zeta>
-    <nucCenterDistance>3.3</nucCenterDistance>
+    <nucCenterDistance>5</nucCenterDistance>
     <segLength>8</segLength>
   </geometry>
   <parameterlist>
     <parameter>
       <name>MIN_SEGMENT_LENGTH</name>
-      <value>2</value>
+      <value>0.15</value>
     </parameter>
     <parameter>
       <name>MAX_SEGMENT_LENGTH</name>
-      <value>8</value>
+      <value>14</value>
     </parameter>
     <parameter>
       <name>NUCLEOSOME_REPEAT_LENGTH</name>
-      <value>187L</value>
+      <value>146L</value>
     </parameter>
     <parameter>
       <name>MODE</name>
-      <value>pbc</value>
+      <value>cube</value>
     </parameter>
   </parameterlist>
   <potential>LJ</potential>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<configuration buildMode="straight" closed="false" nucPotential="NUC_POT_LJ" type="chromatin">
+
+  <parameters>
+    <parameter name="NumberOfBeads" value="54"/>
+    <parameter name="Temperature" value="293"/>
+    <parameter name="EStatTemperature" value="293"/>
+    <parameter name="EnergyBend" value="1"/>
+    <parameter name="EnergyEstat" value="1"/>
+    <parameter name="EnergyLJ" value="1"/>
+    <parameter name="EnergyStretch" value="1"/>
+    <parameter name="EnergyTorsion" value="1"/>
+    <parameter name="EnergyPulling" value="0"/>
+    <parameter name="EnergySurface" value="0"/>
+    <parameter name="EnergyDNANucColl" value="1"/>
+    <parameter name="RadiusDNA" value="1.2"/>
+    <parameter name="NucleosomeRadius" value="5.5"/>
+    <parameter name="ChainIsClosed" value="0"/>
+    <parameter name="AlphaSDNA" value="665"/>
+    <parameter name="AlphaSNuc" value="665"/>
+    <parameter name="AlphaBDNA" value="120.44"/>
+    <parameter name="AlphaBNuc" value="120.44"/>
+    <parameter name="AlphaTDNA" value="156.57"/>
+    <parameter name="AlphaTNuc" value="782.85"/>
+    <parameter name="LJNucType" value="2"/>
+    <parameter name="SigmaLJNuc" value="10.3"/>
+    <parameter name="EpsLJNuc" value="0.65"/>
+    <parameter name="ChiNucLJ" value="0"/>
+    <parameter name="ChiBarNucLJ" value="0"/>
+    <parameter name="IonicStrength" value="0.1"/>
+    <parameter name="ChargeReductionFactor" value="0.5"/>
+    <parameter name="ComputeEstatAtNucleosome" value="0"/>
+    <parameter name="PhiMaxMCBeadR" value="0.025"/>
+    <parameter name="EveryNthMCBeadR" value="4"/>
+    <parameter name="ShiftMaxMCBeadShift" value="0.1"/>
+    <parameter name="PhiMaxFVecMCShift" value="0.02"/>
+    <parameter name="ThetaMaxMCBranched" value="0.02"/>
+    <parameter name="PhiMaxFVecMC" value="0.02"/>
+    <parameter name="PhiMaxMCPivot" value="0.35"/>
+    <parameter name="EstatType" value="2"/>
+    <parameter name="CutoffEstat" value="25.52"/>
+    <parameter name="CutoffMinDistEstat" value="0.1303"/>
+    <parameter name="DNANucIntersectionNucType" value="1"/>
+    <parameter name="CutoffLJNuc" value="3.5"/>
+    <parameter name="CutoffNucDNAColl" value="23.025"/>
+  </parameters>
+
+  <beadPrototype>
+    <dna id="dna1">
+      <segmentLength>9.18</segmentLength>
+    </dna>
+    <nuc id="nuc1">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>184</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna2">
+      <segmentLength>2.04</segmentLength>
+    </dna>
+    <nuc id="nuc2">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>112</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna3">
+      <segmentLength>11.9</segmentLength>
+    </dna>
+    <nuc id="nuc3">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>256</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna4">
+      <segmentLength>6.46</segmentLength>
+    </dna>
+    <nuc id="nuc4">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>220</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna5">
+      <segmentLength>0.34</segmentLength>
+    </dna>
+    <nuc id="nuc5">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>-68</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna6">
+      <segmentLength>12.92</segmentLength>
+    </dna>
+    <nuc id="nuc6">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>184</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna7">
+      <segmentLength>1.7</segmentLength>
+    </dna>
+    <nuc id="nuc7">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>76</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna8">
+      <segmentLength>9.52</segmentLength>
+    </dna>
+    <nuc id="nuc8">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>40</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna9">
+      <segmentLength>11.22</segmentLength>
+    </dna>
+    <nuc id="nuc9">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>112</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna10">
+      <segmentLength>9.35</segmentLength>
+    </dna>
+    <nuc id="nuc10">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>76</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna11">
+      <segmentLength>7.48</segmentLength>
+    </dna>
+    <nuc id="nuc11">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>328</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna12">
+      <segmentLength>12.75</segmentLength>
+    </dna>
+    <nuc id="nuc12">
+      <segmentLength>8</segmentLength>
+      <alpha>50</alpha>
+      <beta>76</beta>
+      <gamma>0</gamma>
+      <delta>0</delta>
+      <epsilon>-70</epsilon>
+      <phi>30</phi>
+      <zeta>10</zeta>
+      <nucCenterDistance>5</nucCenterDistance>
+    </nuc>
+    <dna id="dna13">
+      <segmentLength>6.92</segmentLength>
+    </dna>
+  </beadPrototype>
+
+  <chain>
+    <dna position="0" ref_prototype="dna1"/>
+    <nuc position="1" ref_prototype="nuc1"/>
+    <dna position="2" ref_prototype="dna2"/>
+    <nuc position="3" ref_prototype="nuc2"/>
+    <dna position="4" ref_prototype="dna3"/>
+    <dna position="5" ref_prototype="dna3"/>
+    <nuc position="6" ref_prototype="nuc3"/>
+    <dna position="7" ref_prototype="dna4"/>
+    <nuc position="8" ref_prototype="nuc4"/>
+    <dna position="9" ref_prototype="dna5"/>
+    <nuc position="10" ref_prototype="nuc5"/>
+    <dna position="11" ref_prototype="dna5"/>
+    <nuc position="12" ref_prototype="nuc5"/>
+    <dna position="13" ref_prototype="dna5"/>
+    <nuc position="14" ref_prototype="nuc5"/>
+    <dna position="15" ref_prototype="dna5"/>
+    <nuc position="16" ref_prototype="nuc5"/>
+    <dna position="17" ref_prototype="dna5"/>
+    <nuc position="18" ref_prototype="nuc5"/>
+    <dna position="19" ref_prototype="dna5"/>
+    <nuc position="20" ref_prototype="nuc5"/>
+    <dna position="21" ref_prototype="dna6"/>
+    <nuc position="22" ref_prototype="nuc6"/>
+    <dna position="23" ref_prototype="dna7"/>
+    <nuc position="24" ref_prototype="nuc7"/>
+    <dna position="25" ref_prototype="dna8"/>
+    <dna position="26" ref_prototype="dna8"/>
+    <dna position="27" ref_prototype="dna8"/>
+    <nuc position="28" ref_prototype="nuc8"/>
+    <dna position="29" ref_prototype="dna5"/>
+    <nuc position="30" ref_prototype="nuc5"/>
+    <dna position="31" ref_prototype="dna9"/>
+    <dna position="32" ref_prototype="dna9"/>
+    <nuc position="33" ref_prototype="nuc9"/>
+    <dna position="34" ref_prototype="dna5"/>
+    <nuc position="35" ref_prototype="nuc5"/>
+    <dna position="36" ref_prototype="dna5"/>
+    <nuc position="37" ref_prototype="nuc5"/>
+    <dna position="38" ref_prototype="dna5"/>
+    <nuc position="39" ref_prototype="nuc5"/>
+    <dna position="40" ref_prototype="dna10"/>
+    <dna position="41" ref_prototype="dna10"/>
+    <nuc position="42" ref_prototype="nuc10"/>
+    <dna position="43" ref_prototype="dna5"/>
+    <nuc position="44" ref_prototype="nuc5"/>
+    <dna position="45" ref_prototype="dna5"/>
+    <nuc position="46" ref_prototype="nuc5"/>
+    <dna position="47" ref_prototype="dna11"/>
+    <nuc position="48" ref_prototype="nuc11"/>
+    <dna position="49" ref_prototype="dna12"/>
+    <dna position="50" ref_prototype="dna12"/>
+    <nuc position="51" ref_prototype="nuc12"/>
+    <dna position="52" ref_prototype="dna13"/>
+    <dna position="53" ref_prototype="dna13"/>
+  </chain>
+
+</configuration>
+
