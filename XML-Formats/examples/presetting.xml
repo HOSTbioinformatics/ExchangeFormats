@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<presetting xmlns="http://bioinformatics.fh-stralsund.de/presetting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://bioinformatics.fh-stralsund.de/presetting ../presetting.xsd ">
+<presetting xmlns="http://bioinformatics.hochschule-stralsund.de/presetting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://bioinformatics.hochschule-stralsund.de/presetting ../presetting.xsd ">
   <geometry>
     <alpha>50.0</alpha>
     <beta>-140.0</beta>
